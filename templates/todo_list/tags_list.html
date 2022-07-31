@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>tag List
+    <button  style=" float: right" class="btn btn-success" type="submit"
+             onclick="location.href='{% url 'todo_list:tag-create' %}'">
+        Create
+    </button>
+    </h1>
+
+    {% if tags_list %}
+      <table class="table">
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Update</th>
+          <th>Delete</th>
+        </tr>
+
+        {% for tag in tags_list %}
+            <tr>
+              <td>
+                  {{ tag.id }}
+              </td>
+              <td>
+                  {{ tag.name }}
+              </td>
+              <td>
+                   <button class="btn btn-info" type="submit"
+                           onclick="location.href='{% url 'todo_list:tag-update' tag.pk %}'">
+                       Update
+                   </button>
+              </td>
+              <td>
+                    <button class="btn btn-danger" type="submit"
+                            onclick="location.href='{% url 'todo_list:tag-delete' tag.pk %}'">
+                        Delete
+                    </button>
+              </td>
+          </tr>
+        {% endfor %}
+      </table>
+
+    {% else %}
+        <p>There are no tag </p>
+    {% endif %}
+{% endblock %}
