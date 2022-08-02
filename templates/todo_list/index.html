@@ -13,7 +13,7 @@
       {% if task.done is True %}
        <h4> <strong>{{ task.content }}</strong> <span style="color: green">Done</span>
        <button  style=" float: right" class="btn btn-secondary" type="submit"
-     onclick="location.href='{% url 'todo_list:task-compleat' task.pk %}'">
+     onclick="location.href='{% url 'todo_list:task-complete' task.pk %}'">
         Undo
       </button>
           </h4>

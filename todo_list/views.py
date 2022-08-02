@@ -67,7 +67,7 @@ class TaskDeleteView(generic.DeleteView):
     success_url = reverse_lazy("todo_list:index")
 
 
-def task_compleat(request, pk):
+def task_complete(request, pk):
     task_ = Task.objects.get(pk=pk)
     task_.done = False
     task_.save()
