@@ -10,8 +10,8 @@ Python3 must be already installed
 ```shell
 git clone https://github.com/Vasyl-Smutok/django-Todo-list.git
 cd taxi_service
-python3 -m vemv vemv
-source vemv/bin/activate  #on macOS
+python3 -m venv venv
+source venv/bin/activate  #on macOS
 venv\Scripts\activate  #on Windows 
 pip install -r requirements.txt  
 python manage.py migrate 
